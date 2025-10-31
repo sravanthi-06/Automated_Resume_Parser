@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Automated Resume Parser</title>
+</head>
+<body>
+  <h2>Upload Resume (PDF)</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="resume" accept=".pdf" required>
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if data %}
+  <h3>Extracted Information:</h3>
+  <p><b>Name:</b> {{ data.Name }}</p>
+  <p><b>Email:</b> {{ data.Email }}</p>
+  <p><b>Skills:</b> {{ data.Skills }}</p>
+  {% endif %}
+</body>
+</html>
